@@ -23,7 +23,8 @@ class BottomNavigationBarExample extends StatefulWidget {
       _BottomNavigationBarExampleState();
 }
 
-class _BottomNavigationBarExampleState extends State<BottomNavigationBarExample> {
+class _BottomNavigationBarExampleState
+    extends State<BottomNavigationBarExample> {
   int _selectedIndex = 0;
   static const TextStyle optionStyle =
       TextStyle(fontSize: 30, fontWeight: FontWeight.bold);
@@ -54,47 +55,56 @@ class _BottomNavigationBarExampleState extends State<BottomNavigationBarExample>
 
   @override
   Widget build(BuildContext context) {
-    const Color text_color = Color(0xFFf2ede7);
-    const Color background_color = Color(0xFF171a23);
-    const Color primary_color = Color(0xFF7a5030);
-    const Color secondary_color = Color(0xFF27273a);
-    const Color accent_color = Color(0xFFaa8569);
-
+    const Color textColor = Color(0xFFf2ede7);
+    const Color backgroundColor = Color(0xFF171a23);
+    const Color primaryColor = Color(0xFF7a5030);
+    const Color secondaryColor = Color(0xFF27273a);
+    const Color accentColor = Color(0xFFaa8569);
 
     return Scaffold(
-      backgroundColor: background_color,
+      backgroundColor: backgroundColor,
       appBar: AppBar(
         title: const Text('BottomNavigationBar Sample'),
       ),
       body: Center(
         child: _widgetOptions.elementAt(_selectedIndex),
       ),
-      bottomNavigationBar: BottomNavigationBar(
-        items: const <BottomNavigationBarItem>[
-          BottomNavigationBarItem(
-            icon: Icon(Icons.home),
-            label: 'Feed',
-            backgroundColor: secondary_color,
+      bottomNavigationBar: Container(
+        decoration: BoxDecoration(
+          border: Border(
+            top: BorderSide(
+              color: secondaryColor, // Set the border color to white
+              width: 1.0, // Adjust the border width as needed
+            ),
           ),
-          BottomNavigationBarItem(
-            icon: Icon(Icons.public),
-            label: 'Descobrir',
-            backgroundColor: secondary_color,
-          ),
-          BottomNavigationBarItem(
-            icon: Icon(Icons.book),
-            label: 'Acervo',
-            backgroundColor: secondary_color,
-          ),
-          BottomNavigationBarItem(
-            icon: Icon(Icons.person),
-            label: 'Perfil',
-            backgroundColor: secondary_color,
-          ),
-        ],
-        currentIndex: _selectedIndex,
-        selectedItemColor: accent_color,
-        onTap: _onItemTapped,
+        ),
+        child: BottomNavigationBar(
+          items: const <BottomNavigationBarItem>[
+            BottomNavigationBarItem(
+              icon: Icon(Icons.home),
+              label: 'Feed',
+              backgroundColor: backgroundColor,
+            ),
+            BottomNavigationBarItem(
+              icon: Icon(Icons.public),
+              label: 'Descobrir',
+              backgroundColor: backgroundColor,
+            ),
+            BottomNavigationBarItem(
+              icon: Icon(Icons.book),
+              label: 'Acervo',
+              backgroundColor: backgroundColor,
+            ),
+            BottomNavigationBarItem(
+              icon: Icon(Icons.person),
+              label: 'Perfil',
+              backgroundColor: backgroundColor,
+            ),
+          ],
+          currentIndex: _selectedIndex,
+          selectedItemColor: accentColor,
+          onTap: _onItemTapped,
+        ),
       ),
     );
   }
