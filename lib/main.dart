@@ -62,9 +62,66 @@ class _BottomNavigationBarExampleState
     const Color accentColor = Color(0xFFaa8569);
 
     return Scaffold(
+      floatingActionButton: FloatingActionButton(
+        child: Icon(Icons.add),
+        onPressed: () => (),
+        backgroundColor: accentColor,
+      ),
       backgroundColor: backgroundColor,
+      drawer: Drawer(
+        backgroundColor: backgroundColor,
+        child: ListView(
+          padding: EdgeInsets.zero,
+          children: <Widget>[
+            UserAccountsDrawerHeader(
+              currentAccountPicture: FlutterLogo(),
+              accountName: Text('John Doe'),
+              accountEmail: Text('john@doe.com'),
+              decoration: BoxDecoration(
+                color: primaryColor,
+              ),
+            ),
+            ListTile(
+              leading: Icon(Icons.person),
+              title: const Text('Perfil'),
+              onTap: () => (),
+              textColor: textColor,
+              iconColor: textColor,
+            ),
+            ListTile(
+              leading: Icon(Icons.bookmark),
+              title: const Text('Bookmarks'),
+              onTap: () => (),
+              textColor: textColor,
+              iconColor: textColor,
+            ),
+            ListTile(
+              leading: Icon(Icons.settings),
+              title: const Text('Configurações'),
+              onTap: () => (),
+              textColor: textColor,
+              iconColor: textColor,
+            ),
+          ],
+        ),
+      ),
       appBar: AppBar(
-        title: const Text('BottomNavigationBar Sample'),
+        title: const Text('Sample'),
+        backgroundColor: backgroundColor,
+        elevation: 0,
+        bottom: PreferredSize(
+          preferredSize: Size.fromHeight(1.0),
+          child: Container(
+            decoration: BoxDecoration(
+              border: Border(
+                bottom: BorderSide(
+                  color: secondaryColor,
+                  width: 1.0,
+                ),
+              ),
+            ),
+          ),
+        ),
       ),
       body: Center(
         child: _widgetOptions.elementAt(_selectedIndex),
@@ -73,8 +130,8 @@ class _BottomNavigationBarExampleState
         decoration: BoxDecoration(
           border: Border(
             top: BorderSide(
-              color: secondaryColor, // Set the border color to white
-              width: 1.0, // Adjust the border width as needed
+              color: secondaryColor,
+              width: 1.0,
             ),
           ),
         ),
@@ -96,8 +153,8 @@ class _BottomNavigationBarExampleState
               backgroundColor: backgroundColor,
             ),
             BottomNavigationBarItem(
-              icon: Icon(Icons.person),
-              label: 'Perfil',
+              icon: Icon(Icons.notifications),
+              label: 'Notificações',
               backgroundColor: backgroundColor,
             ),
           ],
