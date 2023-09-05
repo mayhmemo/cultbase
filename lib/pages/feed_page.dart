@@ -10,14 +10,11 @@ class FeedPage extends StatefulWidget {
 class _FeedPageState extends State<FeedPage> {
   @override
   Widget build(BuildContext context) {
-    const Color textColor = Color(0xFFf2ede7);
-    const Color backgroundColor = Color(0xFF171a23);
     const Color primaryColor = Color(0xFF7a5030);
-    const Color secondaryColor = Color(0xFF27273a);
 
     return Scaffold(
       appBar: AppBar(
-        title: Text('Feed'),
+        title: const Text('Feed'),
       ),
       drawer: Drawer(
         child: ListView(
