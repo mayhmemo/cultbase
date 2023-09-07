@@ -55,7 +55,7 @@ class _HomePageState extends State<HomePage> {
           selectedItemColor: accentColor,
           onTap: (page) {
             pageContr.animateToPage(page,
-                duration: const Duration(milliseconds: 400),
+                duration: const Duration(milliseconds: 100),
                 curve: Curves.ease);
           },
         ));
