@@ -13,7 +13,10 @@ class _DiscoverPageState extends State<DiscoverPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Discover'),
+        flexibleSpace: const FlexibleSpaceBar(
+          title: SearchBarApp(),
+          titlePadding: EdgeInsetsDirectional.fromSTEB(4, 10, 4, 0),
+        ),
       ),
     );
   }
