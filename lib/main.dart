@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:cultbase/pages/shared/bottom_bar.dart';
+import 'package:cultbase/pages/components/bottom_bar.dart';
 
 void main() {
   runApp(const MyApp());

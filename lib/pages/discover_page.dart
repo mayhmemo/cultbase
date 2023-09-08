@@ -1,3 +1,4 @@
+import 'package:cultbase/pages/components/search_bar.dart';
 import 'package:flutter/material.dart';
 
 class DiscoverPage extends StatefulWidget {
