@@ -1,4 +1,4 @@
-import 'package:cultbase/pages/shared/sidenew.dart';
+import 'package:cultbase/pages/shared/side_bar.dart';
 import 'package:flutter/material.dart';
 
 class CollectionPage extends StatefulWidget {
