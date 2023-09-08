@@ -1,4 +1,4 @@
-import 'package:cultbase/pages/shared/sidebar.dart';
+import 'package:cultbase/pages/shared/sidenew.dart';
 import 'package:flutter/material.dart';
 
 class FeedPage extends StatefulWidget {
@@ -15,11 +15,10 @@ class _FeedPageState extends State<FeedPage> {
       appBar: AppBar(
         title: const Text('Feed'),
       ),
-      drawer: Drawer(
-        child: ListView(
-          padding: EdgeInsets.zero,
-          children: Sidebar(context),
-        ),
+      drawer: const SideBar(),
+      floatingActionButton: FloatingActionButton(
+        child: const Icon(Icons.add),
+        onPressed: () => (),
       ),
     );
   }

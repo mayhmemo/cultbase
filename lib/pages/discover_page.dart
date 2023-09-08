@@ -1,4 +1,3 @@
-import 'package:cultbase/pages/shared/sidebar.dart';
 import 'package:flutter/material.dart';
 
 class DiscoverPage extends StatefulWidget {
@@ -15,11 +14,6 @@ class _DiscoverPageState extends State<DiscoverPage> {
       appBar: AppBar(
         title: const Text('Discover'),
       ),
-      drawer: Drawer(
-          child: ListView(
-        padding: EdgeInsets.zero,
-        children: Sidebar(context),
-      )),
     );
   }
 }

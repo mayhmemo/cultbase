@@ -1,4 +1,4 @@
-import 'package:cultbase/pages/shared/sidebar.dart';
+import 'package:cultbase/pages/shared/sidenew.dart';
 import 'package:flutter/material.dart';
 
 class CollectionPage extends StatefulWidget {
@@ -15,12 +15,7 @@ class _CollectionPageState extends State<CollectionPage> {
       appBar: AppBar(
         title: const Text('Collection'),
       ),
-      drawer: Drawer(
-        child: ListView(
-          padding: EdgeInsets.zero,
-          children: Sidebar(context),
-        ),
-      ),
+      drawer: const SideBar(),
     );
   }
 }

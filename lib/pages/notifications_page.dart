@@ -1,4 +1,4 @@
-import 'package:cultbase/pages/shared/sidebar.dart';
+import 'package:cultbase/pages/shared/sidenew.dart';
 import 'package:flutter/material.dart';
 
 class NotificationsPage extends StatefulWidget {
@@ -15,12 +15,7 @@ class _NotificationsPageState extends State<NotificationsPage> {
       appBar: AppBar(
         title: const Text('Notifications'),
       ),
-      drawer: Drawer(
-        child: ListView(
-          padding: EdgeInsets.zero,
-          children: Sidebar(context),
-        ),
-      ),
+      drawer: const SideBar(),
     );
   }
 }
