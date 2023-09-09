@@ -23,17 +23,6 @@ class _SearchBarAppState extends State<SearchBarApp> {
           controller.openView();
         },
         leading: const Icon(Icons.search),
-        trailing: <Widget>[
-          Tooltip(
-            message: 'Change brightness mode',
-            child: IconButton(
-              isSelected: false,
-              onPressed: () {},
-              icon: const Icon(Icons.wb_sunny_outlined),
-              selectedIcon: const Icon(Icons.brightness_2_outlined),
-            ),
-          )
-        ],
         hintText: 'Procure livros, autores, usuários e mais...',
       );
     }, suggestionsBuilder: (BuildContext context, SearchController controller) {
