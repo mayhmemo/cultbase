@@ -16,6 +16,7 @@ class _DiscoverPageState extends State<DiscoverPage> {
         flexibleSpace: const FlexibleSpaceBar(
           title: SearchBarApp(),
           titlePadding: EdgeInsetsDirectional.fromSTEB(4, 10, 4, 0),
+          centerTitle: true,
         ),
       ),
     );
