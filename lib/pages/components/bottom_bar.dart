@@ -1,4 +1,5 @@
 import 'package:cultbase/pages/collection_page.dart';
+import 'package:cultbase/pages/components/side_bar.dart';
 import 'package:cultbase/pages/discover_page.dart';
 import 'package:cultbase/pages/feed_page.dart';
 import 'package:cultbase/pages/notifications_page.dart';
@@ -26,10 +27,7 @@ class _BottomBarState extends State<BottomBar> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: IndexedStack(
-        index: currentPageIndex,
-        children: pages,
-      ),
+      body: pages[currentPageIndex],
       bottomNavigationBar: NavigationBar(
         labelBehavior: labelBehavior,
         selectedIndex: currentPageIndex,
@@ -61,6 +59,7 @@ class _BottomBarState extends State<BottomBar> {
           ),
         ],
       ),
+      drawer: const SideBar(),
     );
   }
 }

@@ -1,6 +1,8 @@
 import 'package:cultbase/pages/components/search_bar.dart';
 import 'package:flutter/material.dart';
 
+import 'components/side_bar.dart';
+
 class DiscoverPage extends StatefulWidget {
   const DiscoverPage({super.key});
 
@@ -19,6 +21,7 @@ class _DiscoverPageState extends State<DiscoverPage> {
           centerTitle: true,
         ),
       ),
+      drawer: const SideBar(),
     );
   }
 }
