@@ -1,15 +1,15 @@
 import 'package:flutter/material.dart';
 
 class BookmarkPage extends StatelessWidget {
-  const BookmarkPage({Key? key});
+  const BookmarkPage({super.key});
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Bookmarks'),
+        title: const Text('Bookmarks'),
       ),
-      body: Center(
+      body: const Center(
         child: Text('Página de Bookmarks'),
       ),
     );

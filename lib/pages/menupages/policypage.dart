@@ -1,15 +1,15 @@
 import 'package:flutter/material.dart';
 
 class PolicyPage extends StatelessWidget {
-  const PolicyPage({Key? key});
+  const PolicyPage({super.key});
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Politicas'),
+        title: const Text('Politicas'),
       ),
-      body: Center(
+      body: const Center(
         child: Text('Página de politicas'),
       ),
     );

@@ -1,15 +1,15 @@
 import 'package:flutter/material.dart';
 
 class ConfigurationPage extends StatelessWidget {
-  const ConfigurationPage({Key? key});
+  const ConfigurationPage({super.key});
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Configuration'),
+        title: const Text('Configuration'),
       ),
-      body: Center(
+      body: const Center(
         child: Text('Página de configurações'),
       ),
     );
