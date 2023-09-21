@@ -13,7 +13,7 @@ class BottomBar extends StatefulWidget {
 }
 
 class _BottomBarState extends State<BottomBar> {
-  int currentPageIndex = 0;
+  int currentPageIndex = 1;
   NavigationDestinationLabelBehavior labelBehavior =
       NavigationDestinationLabelBehavior.onlyShowSelected;
 
