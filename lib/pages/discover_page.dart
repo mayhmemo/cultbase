@@ -21,7 +21,6 @@ class _DiscoverPageState extends State<DiscoverPage> {
           centerTitle: true,
         ),
       ),
-      drawer: const SideBar(),
     );
   }
 }

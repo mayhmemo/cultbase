@@ -15,7 +15,6 @@ class ProfileWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final color = Theme.of(context).colorScheme.primary;
-
     return Center(
       child: Stack(
         children: [
@@ -48,21 +47,27 @@ class ProfileWidget extends StatelessWidget {
   }
 
   Widget buildEditIcon(Color color) => buildCircle(
-        color: Colors.white,
-        all: 3,
-        child: buildCircle(
-          color: color,
-          all: 0,
-          child: const IconButton(
-            icon: Icon(
-              Icons.edit,
-              color: Colors.black,
+        all: 2,
+        color: color,
+        child: Container(
+          padding: EdgeInsets.all(0),
+          decoration: BoxDecoration(
+            borderRadius: BorderRadius.circular(30.0),
+            border: Border.all(
+              color: Colors.white, // White border color
+              width: 3.0,
             ),
-            onPressed: null,
+          ),
+          child: IconButton(
+            iconSize: 20,
+            icon: const Icon(
+              Icons.edit,
+              color: Colors.white,
+            ),
+            onPressed: () => {print('teste')},
           ),
         ),
       );
-
   Widget buildCircle({
     required Widget child,
     required double all,
@@ -70,9 +75,10 @@ class ProfileWidget extends StatelessWidget {
   }) =>
       ClipOval(
         child: Container(
-          padding: EdgeInsets.all(all),
           color: color,
           child: child,
+          width: 40,
+          height: 40,
         ),
       );
 }
