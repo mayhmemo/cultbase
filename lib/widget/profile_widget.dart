@@ -1,5 +1,3 @@
-import 'dart:io';
-
 import 'package:flutter/material.dart';
 
 class ProfileWidget extends StatelessWidget {
@@ -35,12 +33,20 @@ class ProfileWidget extends StatelessWidget {
     return ClipOval(
       child: Material(
         color: Colors.transparent,
-        child: Ink.image(
-          image: image,
-          fit: BoxFit.cover,
-          width: 128,
-          height: 128,
-          child: InkWell(onTap: onClicked),
+        child: Container(
+          width: 138,
+          height: 138,
+          decoration: BoxDecoration(
+            shape: BoxShape.circle,
+            border: Border.all(
+              color: Colors.white,
+              width: 1.2, // Largura da borda
+            ),
+          ),
+          child: Ink.image(
+            image: image,
+            fit: BoxFit.cover,
+          ),
         ),
       ),
     );
@@ -50,11 +56,11 @@ class ProfileWidget extends StatelessWidget {
         all: 2,
         color: color,
         child: Container(
-          padding: EdgeInsets.all(0),
+          padding: const EdgeInsets.all(0),
           decoration: BoxDecoration(
             borderRadius: BorderRadius.circular(30.0),
             border: Border.all(
-              color: Colors.white, // White border color
+              color: Colors.white,
               width: 3.0,
             ),
           ),
@@ -68,6 +74,7 @@ class ProfileWidget extends StatelessWidget {
           ),
         ),
       );
+
   Widget buildCircle({
     required Widget child,
     required double all,
@@ -76,9 +83,9 @@ class ProfileWidget extends StatelessWidget {
       ClipOval(
         child: Container(
           color: color,
-          child: child,
           width: 40,
           height: 40,
+          child: child,
         ),
       );
 }

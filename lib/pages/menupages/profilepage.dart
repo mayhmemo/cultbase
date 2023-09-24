@@ -1,37 +1,72 @@
 import 'package:cultbase/utils/user_preferences.dart';
 import 'package:cultbase/widget/numbers_widget.dart';
 import 'package:cultbase/widget/profile_widget.dart';
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import '../../model/user.dart';
 
 class ProfilePage extends StatefulWidget {
+  const ProfilePage({super.key});
+
   @override
   _ProfilePageState createState() => _ProfilePageState();
 }
 
+const double coverHeight = 200;
+
 class _ProfilePageState extends State<ProfilePage> {
+  final double top = coverHeight / 4;
+
   @override
   Widget build(BuildContext context) {
     const user = UserPreferences.myUser;
     return Scaffold(
-      appBar: AppBar(
-        title: const Text('Profile'),
+      appBar: PreferredSize(
+        preferredSize: const Size.fromHeight(coverHeight),
+        child: AppBar(
+          flexibleSpace: buildImagesProfile(user),
+        ),
       ),
-      body: ListView(
-        physics: BouncingScrollPhysics(),
-        children: [
-          ProfileWidget(
+      body: ListView(children: <Widget>[
+        //buildImagesProfile(user),
+        buildName(user),
+        const SizedBox(height: 18),
+        const NumbersWidget(),
+        const SizedBox(height: 24),
+        buildBio(user),
+      ]),
+    );
+  }
+
+  Stack buildImagesProfile(User user) {
+    return Stack(
+      clipBehavior: Clip.none,
+      alignment: Alignment.topCenter,
+      children: [
+        buildBackgroundImage(),
+        Positioned(
+          top: top,
+          child: ProfileWidget(
             imagePath: user.imagePath,
             onClicked: () async {},
           ),
-          const SizedBox(height: 24),
-          buildName(user),
-          const SizedBox(height: 24),
-          NumbersWidget(),
-          const SizedBox(height: 48),
-          buildBio(user),
-        ],
+        ),
+      ],
+    );
+  }
+
+  Widget buildBackgroundImage() {
+    const src =
+        'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ7tfYuBDOf4WBg5Ez3x3dqDbKFxov4tTc27g&usqp=CAU';
+    return Opacity(
+      opacity: 0.5,
+      child: Container(
+        color: Colors.black,
+        child: Image.network(
+          width: double.infinity,
+          height: coverHeight,
+          src,
+          fit: BoxFit.cover,
+        ),
       ),
     );
   }
@@ -40,7 +75,7 @@ class _ProfilePageState extends State<ProfilePage> {
         children: [
           Text(
             user.name,
-            style: TextStyle(fontWeight: FontWeight.bold, fontSize: 24),
+            style: const TextStyle(fontWeight: FontWeight.bold, fontSize: 24),
           ),
           const SizedBox(height: 4),
           Text(
@@ -56,21 +91,25 @@ class _ProfilePageState extends State<ProfilePage> {
       );
 
   Widget buildBio(User user) => Container(
-        padding: EdgeInsets.symmetric(horizontal: 48),
+        padding: const EdgeInsets.symmetric(horizontal: 48),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            const Text(
-              'Biography',
-              style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold),
+            Container(
+              alignment: Alignment.center,
+              child: const Text(
+                'Biography',
+                style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold),
+              ),
             ),
-            const SizedBox(height: 16),
+            const SizedBox(height: 14),
             Text(
               user.about,
               style: const TextStyle(
-                fontSize: 16,
+                fontSize: 14,
                 height: 1.4,
               ),
+              textAlign: TextAlign.justify,
             ),
           ],
         ),
