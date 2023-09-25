@@ -1,8 +1,6 @@
 import 'package:cultbase/pages/components/search_bar.dart';
 import 'package:flutter/material.dart';
 
-import 'components/side_bar.dart';
-
 class DiscoverPage extends StatefulWidget {
   const DiscoverPage({super.key});
 
