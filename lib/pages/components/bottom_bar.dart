@@ -1,6 +1,6 @@
 import 'package:cultbase/pages/collection_page.dart';
 import 'package:cultbase/pages/components/side_bar.dart';
-import 'package:cultbase/pages/discover_page.dart';
+import 'package:cultbase/pages/discover/discover_page.dart';
 import 'package:cultbase/pages/feed_page.dart';
 import 'package:cultbase/pages/notifications_page.dart';
 import 'package:flutter/material.dart';
