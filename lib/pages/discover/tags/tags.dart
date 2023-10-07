@@ -22,9 +22,6 @@ class _ChoiceChipListState extends State<ChoiceChipList> {
   Widget build(BuildContext context) {
     return Column(children: [
       Wrap(
-        // alignment: WrapAlignment.start,
-        // spacing: 2.0,
-        // runSpacing: 2.0,
         children: List.generate(widget.words.length, (index) {
           return Padding(
             padding: const EdgeInsets.all(8.0),
@@ -42,21 +39,5 @@ class _ChoiceChipListState extends State<ChoiceChipList> {
         }),
       )
     ]);
-
-    // return ListView.builder(
-    //   itemCount: widget.words.length,
-    //   itemBuilder: (context, index) {
-    //     return ChoiceChip(
-    //       label: Text(widget.words[index]),
-    //       selected: isSelected[index],
-    //       selectedColor: Colors.red,
-    //       onSelected: (isSelected) {
-    //         setState(() {
-    //           this.isSelected[index] = isSelected;
-    //         });
-    //       },
-    //     );
-    //   },
-    // );
   }
 }
