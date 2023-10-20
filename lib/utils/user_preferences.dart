@@ -7,6 +7,7 @@ class UserPreferences {
     name: 'Sarah Abs',
     age: 24,
     email: 'sarah.abs@gmail.com',
+    userName: '@sarahAbs',
     about:
         'Certified Personal Trainer and Nutritionist with years of experience in creating effective diets and training plans focused on achieving individual customers goals in a smooth way.',
   );

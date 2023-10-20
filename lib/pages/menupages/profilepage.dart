@@ -1,6 +1,6 @@
 import 'package:cultbase/utils/user_preferences.dart';
-import 'package:cultbase/widget/numbers_widget.dart';
-import 'package:cultbase/widget/profile_widget.dart';
+import 'package:cultbase/widget/profile/numbers_widget.dart';
+import 'package:cultbase/widget/profile/profile_widget.dart';
 import 'package:flutter/material.dart';
 import '../../model/user.dart';
 
@@ -27,7 +27,6 @@ class _ProfilePageState extends State<ProfilePage> {
         ),
       ),
       body: ListView(children: <Widget>[
-        //buildImagesProfile(user),
         buildName(user),
         const SizedBox(height: 18),
         const NumbersWidget(),

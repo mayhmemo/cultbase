@@ -49,7 +49,7 @@ class _SideBarState extends State<SideBar> {
           const Divider(),
           ListTile(
             leading: const Icon(Icons.privacy_tip),
-            title: const Text('Políticas'),
+            title: const Text('Policies'),
             onTap: () => {
               Navigator.of(context).push(
                   MaterialPageRoute(builder: (context) => const PolicyPage())),
@@ -57,7 +57,7 @@ class _SideBarState extends State<SideBar> {
           ),
           ListTile(
             leading: const Icon(Icons.settings),
-            title: const Text('Configurações'),
+            title: const Text('Configurations'),
             onTap: () => {
               Navigator.of(context).push(MaterialPageRoute(
                   builder: (context) => const ConfigurationPage())),
