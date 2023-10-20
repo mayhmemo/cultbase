@@ -63,13 +63,13 @@ class _DiscoverPageState extends State<DiscoverPage> {
       quantidadePaginas: 400,
       anoPublicacao: 2005,
     ),
-    // Livro(
-    //   nome: 'Harry Potter',
-    //   capa: '/assets/imagens/neuromancer.jpg',
-    //   autor: 'J.K Rowling',
-    //   quantidadePaginas: 592,
-    //   anoPublicacao: 2007,
-    // ),
+    Livro(
+      nome: 'Harry Potter',
+      capa: '/assets/imagens/neuromancer.jpg',
+      autor: 'J.K Rowling',
+      quantidadePaginas: 592,
+      anoPublicacao: 2007,
+    ),
     // Adicione mais livros conforme necessário
   ];
 
@@ -84,27 +84,29 @@ class _DiscoverPageState extends State<DiscoverPage> {
         ),
       ),
       drawer: const SideBar(),
-      body: Column(
-        children: [
-          Container(
-            child: ChoiceChipList(words: words),
-            alignment: Alignment.center,
-          ),
-          Center(
-            child: Padding(
-              padding: EdgeInsets.all(13),
-              child: Column(
-                children: [
-                  Wrap(
-                    children: livros
-                        .map((livro) => LivroComponente(livro: livro))
-                        .toList(),
-                  )
-                ],
+      body: SingleChildScrollView(
+        child: Column(
+          children: [
+            Container(
+              child: ChoiceChipList(words: words),
+              alignment: Alignment.center,
+            ),
+            Center(
+              child: Padding(
+                padding: EdgeInsets.all(13),
+                child: Column(
+                  children: [
+                    Wrap(
+                      children: livros
+                          .map((livro) => LivroComponente(livro: livro))
+                          .toList(),
+                    )
+                  ],
+                ),
               ),
             ),
-          ),
-        ],
+          ],
+        ),
       ),
     );
   }
