@@ -13,8 +13,16 @@ class ProfilePage extends StatefulWidget {
 
 const double coverHeight = 200;
 
-class _ProfilePageState extends State<ProfilePage> {
+class _ProfilePageState extends State<ProfilePage>
+    with SingleTickerProviderStateMixin {
   final double top = coverHeight / 4;
+  late TabController _tabController;
+
+  @override
+  void initState() {
+    super.initState();
+    _tabController = TabController(length: 2, vsync: this);
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -32,6 +40,25 @@ class _ProfilePageState extends State<ProfilePage> {
         const NumbersWidget(),
         const SizedBox(height: 24),
         buildBio(user),
+        const SizedBox(height: 24),
+        Container(
+          child: TabBar(controller: _tabController, tabs: const [
+            Tab(
+              text: 'Posts',
+            ),
+            Tab(
+              text: 'Collection',
+            ),
+          ]),
+        ),
+        Container(
+          width: double.maxFinite,
+          height: 300,
+          child: TabBarView(
+            controller: _tabController,
+            children: [const Text('teste'), const Text('teste2')],
+          ),
+        ),
       ]),
     );
   }
