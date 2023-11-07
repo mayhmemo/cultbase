@@ -11,8 +11,18 @@ class FeedFriendsPage extends StatefulWidget {
 class _FeedFriendsPageState extends State<FeedFriendsPage> {
   @override
   Widget build(BuildContext context) {
-    return const Scaffold(
-      body: PostWidget(),
-    );
+    return Scaffold(
+      body: ListView(
+      children: const [
+        PostWidget(),
+        PostWidget(),
+        PostWidget(),
+        PostWidget(),
+        PostWidget(),
+        PostWidget(),
+        PostWidget(),
+        PostWidget()
+      ],
+    ));
   }
 }
