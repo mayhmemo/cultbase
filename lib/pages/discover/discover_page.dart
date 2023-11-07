@@ -83,7 +83,6 @@ class _DiscoverPageState extends State<DiscoverPage> {
           centerTitle: true,
         ),
       ),
-      drawer: const SideBar(),
       body: SingleChildScrollView(
         child: Column(
           children: [
