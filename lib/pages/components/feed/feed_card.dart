@@ -21,7 +21,16 @@ class _PostWidgetState extends State<PostWidget> {
               padding: EdgeInsets.all(15),
               child: Column(
                 children: [
-                  CardProfile(),
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: [
+                      CardProfile(),
+                      InkWell(
+                        onTap: null,
+                        child: Icon(Icons.more_vert),
+                      ),
+                    ]
+                  ),
                   SizedBox(height: 10),
                   CardContent(),
                   Divider(
@@ -56,17 +65,14 @@ class CardButtons extends StatelessWidget {
                 onTap: null,
                 child: Icon(Icons.comment_outlined),
               ),
-              SizedBox(width: 8), // Add some spacing between buttons
               InkWell(
                 onTap: null,
-                child: Icon(Icons.anchor_outlined),
+                child: Icon(Icons.trending_up_outlined),
               ),
-              SizedBox(width: 8),
               InkWell(
                 onTap: null,
                 child: Icon(Icons.favorite_outline),
               ),
-              SizedBox(width: 8), // Add some spacing between buttons
               InkWell(
                 onTap: null,
                 child: Icon(Icons.share_outlined),

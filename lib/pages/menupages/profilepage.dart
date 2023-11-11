@@ -1,3 +1,4 @@
+import 'package:cultbase/pages/components/feed/feed_card.dart';
 import 'package:cultbase/utils/user_preferences.dart';
 import 'package:cultbase/widget/profile/numbers_widget.dart';
 import 'package:cultbase/widget/profile/profile_widget.dart';
@@ -56,7 +57,23 @@ class _ProfilePageState extends State<ProfilePage>
           height: 300,
           child: TabBarView(
             controller: _tabController,
-            children: [const Text('teste'), const Text('teste2')],
+            children: [
+              Padding(padding: const EdgeInsets.all(15),
+                  child: ListView(
+                  children: const [
+                    PostWidget(),
+                    PostWidget(),
+                    PostWidget(),
+                    PostWidget(),
+                    PostWidget(),
+                    PostWidget(),
+                    PostWidget(),
+                    PostWidget()
+                  ],
+                ),
+              ),
+              const Text('teste2')
+            ],
           ),
         ),
       ]),

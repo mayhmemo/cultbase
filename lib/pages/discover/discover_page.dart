@@ -2,7 +2,6 @@ import 'package:cultbase/pages/components/search_bar.dart';
 import 'package:cultbase/pages/discover/tags/tags.dart';
 import 'package:flutter/material.dart';
 
-import '../components/side_bar.dart';
 import '../components/book/book_card.dart';
 
 class DiscoverPage extends StatefulWidget {
@@ -87,12 +86,12 @@ class _DiscoverPageState extends State<DiscoverPage> {
         child: Column(
           children: [
             Container(
-              child: ChoiceChipList(words: words),
               alignment: Alignment.center,
+              child: ChoiceChipList(words: words),
             ),
             Center(
               child: Padding(
-                padding: EdgeInsets.all(13),
+                padding: const EdgeInsets.all(13),
                 child: Column(
                   children: [
                     Wrap(

@@ -1,3 +1,4 @@
+import 'package:cultbase/pages/components/feed/feed_card.dart';
 import 'package:flutter/material.dart';
 
 class BookmarkPage extends StatelessWidget {
@@ -9,9 +10,19 @@ class BookmarkPage extends StatelessWidget {
       appBar: AppBar(
         title: const Text('Bookmarks'),
       ),
-      body: const Center(
-        child: Text('Página de Bookmarks'),
-      ),
+      body: Padding(padding: const EdgeInsets.all(15),
+        child: ListView(
+        children: const [
+          PostWidget(),
+          PostWidget(),
+          PostWidget(),
+          PostWidget(),
+          PostWidget(),
+          PostWidget(),
+          PostWidget(),
+          PostWidget()
+        ],
+      )),
     );
   }
 }

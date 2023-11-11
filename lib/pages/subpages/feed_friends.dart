@@ -12,17 +12,19 @@ class _FeedFriendsPageState extends State<FeedFriendsPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: ListView(
-      children: const [
-        PostWidget(),
-        PostWidget(),
-        PostWidget(),
-        PostWidget(),
-        PostWidget(),
-        PostWidget(),
-        PostWidget(),
-        PostWidget()
-      ],
+      body: Padding(padding: const EdgeInsets.all(15),
+        child: ListView(
+        children: const [
+          PostWidget(),
+          PostWidget(),
+          PostWidget(),
+          PostWidget(),
+          PostWidget(),
+          PostWidget(),
+          PostWidget(),
+          PostWidget()
+        ],
+      ),
     ));
   }
 }
