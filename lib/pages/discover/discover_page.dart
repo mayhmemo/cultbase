@@ -20,7 +20,7 @@ class _DiscoverPageState extends State<DiscoverPage> {
       autor: 'Markus Zusak',
       quantidadePaginas: 680,
       anoPublicacao: 1965,
-      status: "Lendo",
+      status: 'Quero Ler',
     ),
     Livro(
       nome: 'Game of Thrones',
@@ -28,7 +28,7 @@ class _DiscoverPageState extends State<DiscoverPage> {
       autor: 'George R.R. Martin',
       quantidadePaginas: 600,
       anoPublicacao: 1996,
-      status: "Lendo",
+      status: 'Quero Ler',
     ),
     Livro(
       nome: 'Maze Runner',
@@ -36,7 +36,7 @@ class _DiscoverPageState extends State<DiscoverPage> {
       autor: 'James Dashner',
       quantidadePaginas: 428,
       anoPublicacao: 2010,
-      status: "Lendo",
+      status: 'Quero Ler',
     ),
     Livro(
       nome: 'O Nome do Vento',
@@ -44,7 +44,7 @@ class _DiscoverPageState extends State<DiscoverPage> {
       autor: 'Patrick Rothfuss',
       quantidadePaginas: 656,
       anoPublicacao: 2009,
-      status: "Lendo",
+      status: 'Quero Ler',
     ),
     Livro(
       nome: 'Neuromancer',
@@ -52,7 +52,7 @@ class _DiscoverPageState extends State<DiscoverPage> {
       autor: 'Willian Gibson',
       quantidadePaginas: 320,
       anoPublicacao: 1984,
-      status: "Lendo",
+      status: 'Quero Ler',
     ),
     Livro(
       nome: 'Percy Jackson',
@@ -60,7 +60,7 @@ class _DiscoverPageState extends State<DiscoverPage> {
       autor: 'Rick Riordan',
       quantidadePaginas: 400,
       anoPublicacao: 2005,
-      status: "Lendo",
+      status: 'Quero Ler',
     ),
     Livro(
       nome: 'Harry Potter',
@@ -68,7 +68,7 @@ class _DiscoverPageState extends State<DiscoverPage> {
       autor: 'J.K Rowling',
       quantidadePaginas: 592,
       anoPublicacao: 2007,
-      status: "Lendo",
+      status: 'Quero Ler',
     ),
     // Adicione mais livros conforme necessário
   ];
@@ -86,10 +86,6 @@ class _DiscoverPageState extends State<DiscoverPage> {
       body: SingleChildScrollView(
         child: Column(
           children: [
-            Container(
-              alignment: Alignment.center,
-              child: ChoiceChipList(words: words),
-            ),
             Center(
               child: Padding(
                 padding: const EdgeInsets.all(13),
