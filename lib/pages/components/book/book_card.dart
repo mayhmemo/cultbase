@@ -6,6 +6,7 @@ class Livro {
   final String autor;
   final int quantidadePaginas;
   final int anoPublicacao;
+  final String status;
 
   Livro({
     required this.nome,
@@ -13,6 +14,7 @@ class Livro {
     required this.autor,
     required this.quantidadePaginas,
     required this.anoPublicacao,
+    required this.status,
   });
 }
 
