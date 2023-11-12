@@ -12,13 +12,7 @@ class DiscoverPage extends StatefulWidget {
 }
 
 class _DiscoverPageState extends State<DiscoverPage> {
-  final List<String> words = [
-    "Lendo",
-    "Quero Ler",
-    "Lidos",
-    "Abandonei",
-  ];
-
+ 
   List<Livro> livros = [
     Livro(
       nome: 'Duna',
