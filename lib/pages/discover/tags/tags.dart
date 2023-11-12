@@ -1,8 +1,9 @@
+import 'package:cultbase/pages/collection_page.dart';
 import 'package:flutter/material.dart';
 
 class ChoiceChipList extends StatefulWidget {
   final Function minhaFuncao;
-  final List<String> words;
+  final List<ChipStatus> words;
 
   ChoiceChipList({required this.words, required this.minhaFuncao});
 
@@ -30,18 +31,17 @@ class _ChoiceChipListState extends State<ChoiceChipList> {
             return Padding(
               padding: const EdgeInsets.all(8.0),
               child: ChoiceChip(
-                label: Text(widget.words[index]),
+                label: Text(widget.words[index].status),
                 selected: isSelected[index],
                 // selectedColor: Colors.red,
                 onSelected: (isSelected) {
+                  widget.words[index].active = !widget.words[index].active;
                   setState(() {
-                    this.isSelected[index] = isSelected;
+                    this.isSelected[index] = widget.words[index].active;
                   });
 
-                  // Chame a função minhaFuncao quando a ChoiceChip for selecionada
-                  if (isSelected) {
-                    widget.minhaFuncao(widget.words[index]);
-                  }
+                  widget.minhaFuncao(widget.words);
+                  
                 },
               ),
             );
