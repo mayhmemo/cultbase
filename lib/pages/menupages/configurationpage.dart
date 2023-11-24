@@ -21,7 +21,10 @@ class ConfigurationPage extends StatelessWidget {
           Divider(height: 0),
           SettingRowWidget("Security"),
           Divider(height: 0),
-          SettingRowWidget("Display and Sound"),
+          SettingRowWidget(
+            "Display and Sound",
+            showCheckBox: true,
+          ),
           Divider(height: 0),
           SettingRowWidget("Username", subtitle: "@teste"),
         ],

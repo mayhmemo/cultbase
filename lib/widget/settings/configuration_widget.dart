@@ -24,6 +24,14 @@ class _SettingRowWidgetState extends State<SettingRowWidget> {
     });
   }
 
+  void toggleCheckbox(bool? value) {
+    if (value != null) {
+      setState(() {
+        isSelected = !isSelected;
+      });
+    }
+  }
+
   @override
   Widget build(BuildContext context) {
     return Column(
@@ -34,12 +42,17 @@ class _SettingRowWidgetState extends State<SettingRowWidget> {
           onTap: () {},
           title: widget.title == null ? const Text('') : Text(widget.title!),
           subtitle: widget.subtitle == null ? null : Text(widget.subtitle!),
-          trailing: widget.visibleSwitch == null
-              ? null
-              : Switch(
+          trailing: widget.visibleSwitch == true
+              ? Switch(
                   value: isSelected,
-                  onChanged: toggleSwitch,
-                ),
+                  onChanged: widget.showCheckBox == true ? null : toggleSwitch,
+                )
+              : widget.showCheckBox == true
+                  ? Checkbox(
+                      value: isSelected,
+                      onChanged: null,
+                    )
+                  : null,
         ),
       ],
     );
