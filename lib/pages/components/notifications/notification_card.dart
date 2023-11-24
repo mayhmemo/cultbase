@@ -1,46 +1,34 @@
 import 'package:flutter/material.dart';
 
-class PostWidget extends StatefulWidget {
-  const PostWidget({super.key});
+class NotificationWidget extends StatefulWidget {
+  const NotificationWidget({super.key});
 
   @override
-  State<PostWidget> createState() => _PostWidgetState();
+  State<NotificationWidget> createState() => _PostWidgetState();
 }
 
-class _PostWidgetState extends State<PostWidget> {
+class _PostWidgetState extends State<NotificationWidget> {
   @override
   Widget build(BuildContext context) {
     return const Column(
       children: [
         Card(
-            shape: RoundedRectangleBorder(
-              borderRadius: BorderRadius.all(Radius.circular(12)),
+          shape: RoundedRectangleBorder(
+            borderRadius: BorderRadius.all(Radius.circular(12)),
+          ),
+          margin: EdgeInsets.only(bottom: 20),
+          child: Padding(
+            padding: EdgeInsets.all(15),
+            child: Column(
+              children: [
+                CardProfile(),
+                SizedBox(height: 10),
+                CardContent(),
+
+                // CardButtons()
+              ],
             ),
-            margin: EdgeInsets.only(bottom: 20),
-            child: Padding(
-              padding: EdgeInsets.all(15),
-              child: Column(
-                children: [
-                  Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                    children: [
-                      CardProfile(),
-                      InkWell(
-                        onTap: null,
-                        child: Icon(Icons.more_vert),
-                      ),
-                    ]
-                  ),
-                  SizedBox(height: 10),
-                  CardContent(),
-                  Divider(
-                    height: 1,
-                    thickness: 0.5,
-                  ),
-                  CardButtons()
-                ],
-              ),
-            ),
+          ),
         )
       ],
     );
@@ -100,10 +88,11 @@ class CardContent extends StatelessWidget {
             children: [
               Flexible(
                 child: Text(
-                  'Lorem ipsaokpdmsapdmsoamdps aomdpoasmdpomaspdmpasomdpoasmd poasmdpaosmdpoasmdpoamspdomaspodm',
+                  'Lorem ipsaokpdmsap dmsoamdps aomdpoasmdpomaspd mpasomdpoasmd poasmdpaosmdpoasmdpoamspdomaspodm',
                   overflow: TextOverflow.clip,
+                  style: TextStyle(),
                 ),
-              )
+              ),
             ],
           )
         ],
@@ -123,8 +112,10 @@ class CardProfile extends StatelessWidget {
       children: [
         CircleAvatar(),
         Padding(padding: EdgeInsets.only(right: 15)),
-        Text('Teste',
-            style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold)),
+        Column(children: [
+          Text('Categoria'),
+          Text('Nome do usuário', style: TextStyle(fontSize: 18)),
+        ])
       ],
     );
   }
